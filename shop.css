@@ -300,6 +300,11 @@ font-size: 12px;
     justify-content: center;
 }
 
+#prodetails{
+  display: flex;
+  margin-top: 20px;
+}
+
 #prodetails .single-pro-image{
     width: 40%;
     margin-right: 50px;
@@ -315,6 +320,41 @@ font-size: 12px;
     cursor: pointer;
 }
 
-#prodetails .single-pro-details h4, h6, h2{
+#prodetails .single-pro-details span, h4, h6, h2{
     color: black;
+}
+
+#prodetails .single-pro-details{
+  width: 50%;
+  padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4{
+  padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2{
+  font-size: 26px;
+}
+
+#prodetails .single-pro-details input{
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#prodetails .single-pro-details button{
+  background: #088178;
+  color: #ffffff;
+  height: 47px;
+  width: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+#prodetails .single-pro-details span{
+  line-height: 25px;
+  display: block;
 }
