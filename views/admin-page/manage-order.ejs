@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Management</title>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Order Management</h2>
+      <%- include('../partials/messages') %>
+      <div class="row">
+        <div class="col-md-12">
+          <% if (orders.length === 0) { %>
+          <div class="alert alert-info" role="alert">
+            There are no orders available.
+          </div>
+          <% } else { %>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Ordered Date & Time</th>
+                <th scope="col">Ordered By</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Image</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% orders.forEach((order, index) => { %> <%
+              order.cart.forEach((item, itemIndex) => { %>
+              <tr>
+                <th scope="row"><%= index + 1 %></th>
+                <td><%= item.productName %></td>
+                <td><%= order.date.toLocaleString() %></td>
+                <td><%= order.email %></td>
+                <td>$ <%= item.totalPrice %></td>
+                <td><%= item.quantity %></td>
+                <td>
+                  <img
+                    src="<%= item.image %>"
+                    alt="Product Image"
+                    style="max-width: 100px"
+                  />
+                </td>
+                <td>
+                  <form method="POST" action="/ship?_method=DELETE">
+                    <input type="hidden" name="email" value="<%= order.email %>" />
+                    <input type="hidden" name="id" value="<%= item.id %>" />
+                    <button
+                      type="submit"
+                      class="btn btn-success fw-bold"
+                      style="width: 80px"
+                      onclick="return confirm('Mark this order as done?')"
+                    >
+                      Ship
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %> <% }) %>
+            </tbody>
+          </table>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+header{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left : 0;
+    width: 100%;
+    background: var(--bg-color);
+    background-color: white;
+    height: 60px;
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+}
+header img{
+    margin-bottom: 10px;
+    width: 120px;
+    height: 55px;
+    float: left;
+    transform: translate(15%, -25%);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.container{
+    max-width: 1600px;
+    margin: auto;
+    width: 100%;
+}
+
+#page1 .input-container {
+    margin-top: 40px; /* Sesuaikan dengan jumlah margin yang diinginkan */
+}
+
+#page1 .input-container h2 {
+    color: #d2b356;
+}
+
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+}
+
+.input-container, .ktp-card {
+    font-family: Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+}
+
+.input-container {
+    border: 1px solid #000;
+    padding: 30px;
+    height: 550px;
+    width: 600px;
+    align-self: center;
+    margin-top: 1%;
+    position: relative;
+}
+
+.ktp-card {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    height: 270px;
+    width: 490px;
+    align-self: center;
+    background-color: #e3e2de;
+    background-size: cover;
+    position: relative; /* Membuat posisi relatif untuk animasi */
+    z-index: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.943); /* Efek bayangan */
+    margin-left: 70%;
+}
+
+.input-container div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-container h2{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 10px;
+}
+
+.ktp-card:hover {
+    cursor: pointer; /* Mengubah cursor saat dihover */
+    transform: scale(1.1); /* Animasi perbesaran saat dihover */
+    transition: transform 0.2s ease-in-out; /* Efek perbesaran yang halus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan saat dihover */
+}
+
+
+.ktp-card h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1px;
+    color: #3b3b3b; /* Warna teks putih */
+}
+
+.ng-binding{
+    color: #3b3b3b; /* Warna teks putih */
+}
+
+.input-container label {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.input-container input[type="text"] {
+    font-family: "Spartan", sans-serif;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#datak{
+    color: white;
+}
+iner {
+    position: absolute;
+    top: 10px; /* Sesuaikan dengan posisi vertikal yang diinginkan */
+    left: 10px; /* Sesuaikan dengan posisi horizontal yang diinginkan */
+    z-index: 1;
+}
+
+#preview {
+    max-width: 40%;
+    max-height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#preview:hover {
+    transform: scale(1.05);
+}
+
+#jeniskelamin {
+    width: 540px;
+    height: 35px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#jeniskelamin:hover {
+    background-color: #ffffff;
+}
+
+#tempatLahir {
+    width: 540px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#tempatLahir:hover {
+    background-color: #09020231;
+}
+
+#nim {
+    width: 540px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    transition: background-color 0.3s;
+}
+
+#nim:hover {
+    background-color: #09020229;
+}
+
+#nama {
+    width: 540px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#nama:hover {
+    background-color: #09020230;
+}
+
+#citaCita {
+    width: 540px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#citaCita:hover {
+    background-color: #09020230;
+}
+
+#bahasaPemrograman {
+    width: 540px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#bahasaPemrograman:hover {
+    background-color: #09020230;
+}
+
+#foto-label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#foto-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+#foto-input:hover {
+    background-color: #f0f0f0;
+}
+
+#preview-container {
+    position: absolute;
+    top: -150px; 
+    left: 350px;
+    z-index: 1;
+    width: 120px; 
+    height: 160px; 
+    overflow: hidden; 
+}
+
+#preview {
+    max-width: none;
+    width: 100%; 
+    height: 100%; 
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    object-position: center;
+}
+
+#preview-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.534); 
+}
+
+#preview-container img:not([src]) {
+    display: none; 
+}
+
+
+
+
+
+#preview:hover {
+    transform: scale(1.05);
+}
+
+.flex-container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    margin-bottom: 10cm;
+    z-index: 10;
+}
+
+.ktp-data {
+    margin: 10px;
+    align-items: center;
+}
+
+.ktp-data strong {
+    margin-right: 10px;
+    color: #3b3b3b;
+    min-width: 100px; /* Sesuaikan lebar minimum sesuai kebutuhan */
+}
+
+.ktp-data span {
+    color: #3b3b3b;
+}
+
+.foto-container {
+    margin-top: 1px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto-container:hover {
+    transform: scale(1.05);
+}
+
+#scrollToSection2 {
+    position: absolute;
+    width: 100px;
+    bottom: 20px;
+    right: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d2b356;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+#scrollToSection2:hover {
+    background-color: #716645; 
+}
+
+#scrollToSection2:active {
+    transform: translateY(2px);
+    transition: transform 0.1s;
+}
+
+#downloadBtn {
+    background-color: #01060279;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    z-index: 10;
+    position: absolute;
+    /* Center the button horizontally */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Set the button to be at the bottom of the screen */
+    bottom: -70px; /* Adjust this value as needed */
+}
+
+#downloadBtn:hover {
+    background-color: rgb(14, 15, 14)
+}
+
+#downloadBtn:active {
+    transform: translateY(2px);
+    transition: transform 0.1s;
+}

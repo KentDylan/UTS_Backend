@@ -1,0 +1,300 @@
+
+
+
+        <section id="prodetails" class="section-p1">
+            <div class="single-pro-image">
+                <img id="MainImg" width="100%" alt="">
+            </div>
+            <div class="single-pro-details">
+                <h6 id="Brand"></h6>
+                <h4 id="ProductName"></h4>
+                <h2 id="ProductPrice"></h2>
+                <input id="quantityInput" type="number" value="1">
+                <button id="addToCartBtn" type="button" class="btn btn-primary">Add To Cart</button>
+                <h6>Specification</h6>
+                <span id="cpu"></span>
+                <span id="gpu"></span>
+                <span id="memory"></span>
+                <span id="storage"></span>
+                <span id="display"></span>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                    // Extract product details from the URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('product_id');
+        
+                // Example product details (replace with your data fetching logic)
+                const productDetails = {
+                    1: {
+                        brand: 'MSI',
+                        name: 'Titan 18 HX A14V',
+                        price: 'Rp. 88.799.000',
+                        image: 'img/laptop/1.png',
+                        cpu: 'CPU: Intel® Core™ i9 processor 14900HX 24 cores (8 P-cores + 16 E-cores)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4080 Laptop GPU',
+                        memory: 'Memory: 32GB*2 DDR5',
+                        storage: 'Storage: 2x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible',
+                        display: 'Display: 18" UHD+(3840x2400), 120Hz Refresh Rate, Mini LED, IPS-Level, VESA DisplayHDR™ 1000 Certified, 100% DCI-P3(Typical)',
+                    },
+                    2: {
+                        brand: 'MSI',
+                        name: 'Titan GT77 HX 13V',
+                        price: 'Rp. 66.199.000',
+                        image: 'img/laptop/2.png',
+                        cpu: 'CPU:13th Gen Intel® Core™ i9-13980HX processor 24 cores (8 P-cores + 16 E-cores)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4080 Laptop GPU',
+                        memory: 'Memory: 32GB*2 DDR5',
+                        storage: 'Storage: 2TB*2 NVMe SSD PCIe Gen4',
+                        display: 'Display: 17.3" UHD 4K(3840x2160), 144Hz Refresh Rate, Mini LED, IPS-Level, VESA DisplayHDR™ 1000 Certified, 100% DCI-P3(Typical)',
+                    },
+                    3: {
+                        brand: 'MSI',
+                        name: 'Stealth 18 AI Studio A1V',
+                        price: 'Rp. 45.000.000',
+                        image: 'img/laptop/3.png',
+                        cpu: 'CPU: Up to Intel® Core™ Ultra 9 processor with Intel® AI Boost (NPU)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4090 Laptop GPU 16GB GDDR6',
+                        memory: 'Memory: Max 96GB DDR5-5600 2 Slots *Vary by Memory capacity',
+                        storage: 'Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)',
+                        display: 'Display: 18” UHD+ (3840x2400), MiniLED, 120Hz 18” QHD+ (2560x1600), 240Hz, IPS-Level 18” FHD+ (1920x1200), 165Hz, IPS-Level',
+                    },
+                    4: {
+                        brand: 'MSI',
+                        name: 'Stealth 16 AI Studio A1V',
+                        price: 'Rp. 40.499.000',
+                        image: 'img/laptop/4.png',
+                        cpu: 'CPU: Up to Intel® Core™ Ultra 9 processor with Intel® AI Boost (NPU)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4090 Laptop GPU 16GB GDDR6',
+                        memory: 'Memory: Max 96GB DDR5-5600 2 Slots *Vary by Memory capacity',
+                        storage: 'Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)',
+                        display: 'Display: 16” QHD+ (2560x1600), 240Hz, IPS-Level 16” UHD+ (3840x2400), 120Hz, MiniLED, IPS-Level',
+                    },
+                    5: {
+                        brand: 'MSI',
+                        name: 'Stealth 14 AI Studio A1V',
+                        price: 'Rp. 26.500.000',
+                        image: 'img/laptop/5.png',
+                        cpu: 'CPU: Up to Intel® Core™ Ultra 9 processor with Intel® AI Boost (NPU)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6',
+                        memory: 'Memory: Max 96GB DDR5-5600 2 Slots *Vary by Memory capacity',
+                        storage: 'Storage: 1x M.2 SSD slot (NVMe PCIe Gen4)',
+                        display: '14” QHD+ (2560x1600), 240Hz, IPS-Level 14” 2.8K (2880x1800), 120Hz, OLED',
+                    },
+                    6: {
+                        brand: 'MSI',
+                        name: 'Stealth 16 Mercedes-AMG Motorsport A13V',
+                        price: 'Rp. 39.999.000',
+                        image: 'img/laptop/6.png',
+                        cpu: 'CPU: Up to 13th Gen Intel® Core™ i9 Processor',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6',
+                        memory: 'Memory: Max 64GB DDR5-5200 2 Slots',
+                        storage: 'Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)',
+                        display: 'Display: 16” UHD+ (3840x2400), 60Hz, OLED',
+                    },
+                    7: {
+                        brand: 'MSI',
+                        name: 'Raider GE78 HX 14V',
+                        price: 'Rp. 64.499.000',
+                        image: 'img/laptop/7.png',
+                        cpu: 'CPU: Up to Intel® Core™ i9 processor HX series (14th Gen)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4090 Laptop GPU 16GB GDDR6',
+                        memory: 'Memory: Max 96GBUp to DDR5-5600 2 Slots *Vary by Memory capacity',
+                        storage: 'Storage: 1x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible',
+                        display: 'Display: 17” QHD+ (2560x1600), 240Hz, IPS-Level 17” FHD+ (1920x1200), 165Hz, IPS-Level',
+                    },
+                    8: {
+                        brand: 'MSI',
+                        name: 'Vector GP68 HX 12V',
+                        price: 'Rp. 53.000.000',
+                        image: 'img/laptop/8.png',
+                        cpu: 'CPU: Up to 13th Gen Intel® Core™ i9 HX Processor',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4080 Laptop GPU 12GB GDDR6',
+                        memory: 'Memory: Max 64GB 2 Slots *Vary by CPU and Memory combination',
+                        storage: 'Storage: 1x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible',
+                        display: 'Display: 16” QHD+ (2560x1600), 240Hz, IPS-Level 16" 16:10 FHD+(1920 x 1200), 144Hz, IPS-level',
+                    },
+                    9: {
+                        brand: 'MSI',
+                        name: 'Vector GP77 13V',
+                        price: 'Rp. 37.699.000',
+                        image: 'img/laptop/9.png',
+                        cpu: 'CPU: Up to 13th Gen Intel® Core™ i9 Processor',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6',
+                        memory: 'Memory: Max 64GB DDR5-5200 2 Slots',
+                        storage: 'Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)',
+                        display: 'Display: 17.3" FHD (1920x1080), 144Hz, IPS-Level 17.3" QHD (2560x1440), 240Hz, IPS-Level',
+                    },
+                    10: {
+                        brand: 'MSI',
+                        name: 'Crosshair 17HX D14V',
+                        price: 'Rp. 28.000.000',
+                        image: 'img/laptop/10.png',
+                        cpu: 'CPU: Up to Intel® Core™ i7 processor HX series (14th Gen)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6',
+                        memory: 'Memory: Max 96GB Up to DDR5-5600 2 Slots *Vary by Memory capacity',
+                        storage: 'Storage: 1x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible',
+                        display: 'Display: 17” QHD+ (2560x1600), 240Hz, IPS-Level',
+                    },
+                    11: {
+                        brand: 'MSI',
+                        name: 'Sword 17HX B14V',
+                        price: 'Rp. 50.000.000',
+                        image: 'img/laptop/11.png',                              
+                        cpu: 'CPU: Up to Intel® Core™ i7 processor HX series (14th Gen)',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6',
+                        memory: 'Memory: Max 96GB Up to DDR5-5600 2 Slots *Vary by Memory capacity',
+                        storage: 'Storage: 1x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible',
+                        display: 'Display: 17” QHD+ (2560x1600), 240Hz, IPS-Level 17” FHD+ (1920x1200), 165Hz, IPS-Level',
+                    },
+                    12: {
+                        brand: 'MSI',
+                        name: 'Katana 17 B13V',
+                        price: 'Rp. 41.300.000',
+                        image: 'img/laptop/12.png',
+                        cpu: 'CPU: Up to 13th Gen Intel® Core™ i7 Processor',
+                        gpu: 'GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6',
+                        memory: 'Memory: Max 64GB DDR5-5200 2 Slots',
+                        storage: 'Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)',
+                        display: 'Display: 17.3" FHD (1920x1080), 144Hz, IPS-Level',
+                    },
+                    // Add details for other products as needed
+                };
+    
+                // Populate the product detail page with the selected product's details
+                if (productId && productDetails[productId]) {
+                    const product = productDetails[productId];
+                    document.getElementById('Brand').innerText = product.brand;
+                    document.getElementById('ProductName').innerText = product.name;
+                    document.getElementById('ProductPrice').innerText = product.price;
+                    document.getElementById('MainImg').src = product.image;
+                    document.getElementById('cpu').innerText = product.cpu;
+                    document.getElementById('gpu').innerText = product.gpu;
+                    document.getElementById('memory').innerText = product.memory;
+                    document.getElementById('storage').innerText = product.storage;
+                    document.getElementById('display').innerText = product.display;
+                } else {
+                    // Handle the case where the product ID is not valid or not provided
+                    console.error('Invalid product ID');
+                }
+            
+                // Select the "Add to Cart" button by its id
+                const addToCartBtn = document.getElementById('addToCartBtn');
+            
+                // Add an event listener to the button
+                addToCartBtn.addEventListener('click', function () {
+                    // Get the product details for the selected product ID
+                    const selectedProduct = productDetails[productId];
+            
+                    // Create an object representing the item to be added to the cart
+                    const cartItem = {
+                        id: productId,
+                        name: selectedProduct.name,
+                        price: selectedProduct.price,
+                        quantity: 1, // Default quantity, you can modify this as needed
+                        image: selectedProduct.image,
+                    };
+            
+                    // Add the item to the shopping cart (replace this with your actual cart logic)
+                    addToCart(cartItem);
+                });
+
+                // Function to add item to the cart (replace this with your actual cart logic)
+                function addToCart(item) {
+                    // Implement your logic to add the item to the cart
+                    console.log('Adding to cart:', item);
+            
+                    // Example: Update the cart tab with the added item (you need to modify this based on your cart structure)
+                    const listCart = document.querySelector('.listCart');
+                    const newItem = document.createElement('div');
+                    newItem.className = 'item';
+                    newItem.innerHTML = `
+                        <div class="image">
+                            <img src="${item.image}" alt="">
+                        </div>
+                        <div class="name">${item.name}</div>
+                        <div class="totalPrice">${item.price}</div>
+                        <div class="quantity">
+                            <span class="minus"><</span>
+                            <span>${item.quantity}</span>
+                            <span class="plus">></span>
+                        </div>
+                    `;
+                    listCart.appendChild(newItem);
+                }
+            });
+            
+        </script>
+
+        <section id="product1" class="section-p1">
+            <h2>Featured Items</h2>
+            <p>Latest Releases</p>
+            <div class="pro-container">
+
+                <div class="pro" onclick="window.location.href='/sproduct?product_id=12'">
+                    <img src="img/laptop/12.png" alt="">
+                    <div class="des">
+                        <h5></h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Rp. 41.300.000</h4>
+                    </div>
+                    <a href="product-detail.html?product_id=12"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro" onclick="window.location.href='/sproduct?product_id=11'">
+                    <img src="img/laptop/11.png" alt="">
+                    <div class="des">
+                        <h5>Sword 17HX B14V</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Rp. 50.000.000</h4>
+                    </div>
+                    <a href="product-detail.html?product_id=11"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro" onclick="window.location.href='/sproduct?product_id=8'">
+                    <img src="img/laptop/8.png" alt="">
+                    <div class="des">
+                        <h5>Vector GP68 HX 12V</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Rp. 53.000.000</h4>
+                    </div>
+                    <a href="product-detail.html?product_id=8"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro" onclick="window.location.href='/sproduct?product_id=6'">
+                    <img src="img/laptop/6.png" alt="">
+                    <div class="des">
+                        <h5>Stealth 16 Mercedes-AMG Motorsport A13V</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Rp. 39.999.000</h4>
+                    </div>
+                    <a href="product-detail.html?product_id=6"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+        </section>

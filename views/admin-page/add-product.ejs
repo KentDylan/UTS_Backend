@@ -1,0 +1,115 @@
+<div class="container mt-3 mb-5">
+  <div class="row mt-5">
+    <div class="col-md-8 m-auto">
+      <div class="card card-body">
+        <h2>Add New Product Form</h2>
+        <%- include('../partials/messages') %>
+        <form method="post" action="/product">
+          <!-- <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+              type="text"
+              class="form-control"
+              id="brand"
+              name="brand"
+              required
+            />
+          </div> -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="text"
+              class="form-control"
+              id="price"
+              name="price"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input
+              type="text"
+              class="form-control"
+              id="image"
+              name="image"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="cpu" class="form-label">CPU</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cpu"
+              name="cpu"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="gpu" class="form-label">GPU</label>
+            <input
+              type="text"
+              class="form-control"
+              id="gpu"
+              name="gpu"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="memory" class="form-label">Memory</label>
+            <input
+              type="text"
+              class="form-control"
+              id="memory"
+              name="memory"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="storage" class="form-label">Storage</label>
+            <input
+              type="text"
+              class="form-control"
+              id="storage"
+              name="storage"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="display" class="form-label">Display</label>
+            <input
+              type="text"
+              class="form-control"
+              id="display"
+              name="display"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="quantity"
+              name="quantity"
+              min="1"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary fw-bold">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

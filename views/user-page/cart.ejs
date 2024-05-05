@@ -1,0 +1,116 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10">
+      <h2>Shopping Cart</h2>
+      <%- include('../partials/messages') %> <% if (items.length === 0) { %>
+      <div class="alert alert-info mt-3" role="alert">
+        Your shopping cart is empty.
+      </div>
+      <% } else { %>
+      <form method="POST" action="/cart/clear?_method=DELETE" class="mt-3">
+        <button
+          type="submit"
+          class="btn btn-danger fw-bold d-block float-right"
+          onclick="return confirm('Do you want to clear all items in the cart?')"
+        >
+          Clear Cart
+        </button>
+      </form>
+
+      <table class="table table-striped mt-3">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">No</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let totalPrice = 0; %> <% items.forEach((item, i) => { %>
+          <tr>
+            <th scope="row"><%= i + 1 %></th>
+            <td>
+              <img
+                src="<%= item.image %>"
+                class="table-img"
+                style="width: 150px"
+              />
+            </td>
+            <td><%= item.productName %></td>
+            <td>
+              <div class="input-group" style="width: 150px">
+                <form
+                  method="POST"
+                  action="/cart/decrement/<%= item.id %>?_method=PUT"
+                >
+                  <input type="hidden" name="id" value="<%= item.id %>" />
+                  <button class="btn btn-outline-secondary" type="submit">
+                    -
+                  </button>
+                </form>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  value="<%= item.quantity %>"
+                  id="quantity_<%= i %>"
+                  readonly
+                  style="width: 20px"
+                />
+                <form
+                  method="POST"
+                  action="/cart/increment/<%= item.id %>?_method=PUT"
+                >
+                  <input type="hidden" name="id" value="<%= item.id %>" />
+                  <button class="btn btn-outline-secondary" type="submit">
+                    +
+                  </button>
+                </form>
+              </div>
+            </td>
+            <td>$ <%= item.quantity * item.totalPrice %></td>
+            <td>
+              <form method="POST" action="/cart/<%= item.id %>?_method=DELETE">
+                <input type="hidden" name="id" value="<%= item.id %>" />
+                <button
+                  type="submit"
+                  class="btn btn-danger fw-bold d-block"
+                  style="width: 100%"
+                  onclick="return confirm('Do you want to delete this item?')"
+                >
+                  Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% totalPrice += item.quantity * item.totalPrice; %> <% }) %>
+          <tr class="table-dark fw-bold">
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td>Total Price</td>
+            <td>$ <%= totalPrice %></td>
+            <td>
+              <form
+                method="POST"
+                action="/checkout"
+                class="d-inline-flex gap-1 justify-content-center mb-3"
+                style="width: 100%"
+              >
+                <button
+                  type="submit"
+                  class="btn btn-primary fw-bold d-block float-left mr-2"
+                >
+                  Checkout
+                </button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+  </div>
+</div>

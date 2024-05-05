@@ -1,0 +1,83 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center mb-4">User Product Request List</h2>
+      <a href="/product/add" class="btn btn-primary mb-2 fw-bold"
+        >Approve All</a
+      >
+      <% include('../partials/messages') %> <% if (requests.length === 0) { %>
+      <div class="text-center">
+        <div class="alert alert-info" role="alert">
+          No product requests found.
+        </div>
+      </div>
+      <% } else { %>
+      <div class="row">
+        <% requests.forEach((request, i) => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="<%= request.image %>"
+              class="card-img-top mx-auto d-block"
+              style="width: 360px"
+              alt="Product Image"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold"><%= request.name %></h5>
+              <p class="card-text fw-bold">$ <%= request.price %></p>
+              <p class="card-text fw-bold">
+                Requested by: <%= request.email %>
+              </p>
+              <div class="d-inline-flex gap-1 justify-content-center mb-3">
+                <a
+                  class="btn btn-dark fw-bold"
+                  data-bs-toggle="collapse"
+                  href="#multiCollapseExample<%= i %>"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="multiCollapseExample<%= i %>"
+                  >Descriptions</a
+                >
+                <form method="POST" action="/to-product">
+                  <input type="hidden" name="_id" value="<%= request._id %>" />
+                  <button type="submit" class="btn btn-success fw-bold">
+                    Approve
+                  </button>
+                </form>
+                <form method="POST" action="/request?_method=DELETE">
+                  <input type="hidden" name="_id" value="<%= request._id %>" />
+                  <button
+                    type="submit"
+                    class="btn btn-danger fw-bold"
+                    onclick="return confirm('Do you want to reject this product request?')"
+                  >
+                    Reject
+                  </button>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div
+                    class="collapse multi-collapse"
+                    id="multiCollapseExample<%= i %>"
+                  >
+                    <div class="card card-body">
+                      <p><strong>Quantity:</strong> <%= request.quantity %></p>
+                      <p><strong>CPU:</strong> <%= request.cpu %></p>
+                      <p><strong>GPU:</strong> <%= request.gpu %></p>
+                      <p><strong>Memory:</strong> <%= request.memory %></p>
+                      <p><strong>Storage:</strong> <%= request.storage %></p>
+                      <p><strong>Display:</strong> <%= request.display %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>

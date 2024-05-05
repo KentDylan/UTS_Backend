@@ -1,0 +1,98 @@
+[
+  {
+    "brand": "MSI",
+    "name": "Titan 18 HX A14V",
+    "price": "Rp. 88.799.000",
+    "image": "img/laptop/1.png",
+    "cpu": "CPU: Intel® Core™ i9 processor 14900HX 24 cores (8 P-cores + 16 E-cores)",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4080 Laptop GPU",
+    "memory": "Memory: 32GB*2 DDR5",
+    "storage": "Storage: 2x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible",
+    "display": "Display: 18\" UHD+(3840x2400), 120Hz Refresh Rate, Mini LED, IPS-Level, VESA DisplayHDR™ 1000 Certified, 100% DCI-P3(Typical)",
+    "quantity": 10
+  },
+  {
+    "brand": "MSI",
+    "name": "Titan GT77 HX 13V",
+    "price": "Rp. 66.199.000",
+    "image": "img/laptop/2.png",
+    "cpu": "CPU:13th Gen Intel® Core™ i9-13980HX processor 24 cores (8 P-cores + 16 E-cores)",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4080 Laptop GPU",
+    "memory": "Memory: 32GB*2 DDR5",
+    "storage": "Storage: 2TB*2 NVMe SSD PCIe Gen4",
+    "display": "Display: 17.3\" UHD 4K(3840x2160), 144Hz Refresh Rate, Mini LED, IPS-Level, VESA DisplayHDR™ 1000 Certified, 100% DCI-P3(Typical)",
+    "quantity": 10
+  },
+  {
+    "brand": "MSI",
+    "name": "Stealth 18 AI Studio A1V",
+    "price": "Rp. 45.000.000",
+    "image": "img/laptop/3.png",
+    "cpu": "CPU: Up to Intel® Core™ Ultra 9 processor with Intel® AI Boost (NPU)",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4090 Laptop GPU 16GB GDDR6",
+    "memory": "Memory: Max 96GB DDR5-5600 2 Slots *Vary by Memory capacity",
+    "storage": "Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)",
+    "display": "Display: 18” UHD+ (3840x2400), MiniLED, 120Hz 18” QHD+ (2560x1600), 240Hz, IPS-Level 18” FHD+ (1920x1200), 165Hz, IPS-Level",
+    "quantity": 10
+  },
+  {
+    "brand": "MSI",
+    "name": "Stealth 16 AI Studio A1V",
+    "price": "Rp. 40.499.000",
+    "image": "img/laptop/4.png",
+    "cpu": "CPU: Up to Intel® Core™ Ultra 9 processor with Intel® AI Boost (NPU)",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4090 Laptop GPU 16GB GDDR6",
+    "memory": "Memory: Max 96GB DDR5-5600 2 Slots *Vary by Memory capacity",
+    "storage": "Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)",
+    "display": "Display: 16” QHD+ (2560x1600), 240Hz, IPS-Level 16” UHD+ (3840x2400), 120Hz, MiniLED, IPS-Level",
+    "quantity": 10
+  },
+  {
+    "brand": "MSI",
+    "name": "Stealth 14 AI Studio A1V",
+    "price": "Rp. 26.500.000",
+    "image": "img/laptop/5.png",
+    "cpu": "CPU: Up to Intel® Core™ Ultra 9 processor with Intel® AI Boost (NPU)",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6",
+    "memory": "Memory: Max 96GB DDR5-5600 2 Slots *Vary by Memory capacity",
+    "storage": "Storage: 1x M.2 SSD slot (NVMe PCIe Gen4)",
+    "display": "14” QHD+ (2560x1600), 240Hz, IPS-Level 14” 2.8K (2880x1800), 120Hz, OLED",
+    "quantity": 10
+  },
+  {
+    "brand": "MSI",
+    "name": "Stealth 16 Mercedes-AMG Motorsport A13V",
+    "price": "Rp. 39.999.000",
+    "image": "img/laptop/6.png",
+    "cpu": "CPU: Up to 13th Gen Intel® Core™ i9 Processor",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4070 Laptop GPU 8GB GDDR6",
+    "memory": "Memory: Max 64GB DDR5-5200 2 Slots",
+    "storage": "Storage: 2x M.2 SSD slot (NVMe PCIe Gen4)",
+    "display": "Display: 16” UHD+ (3840x2400), 60Hz, OLED",
+    "quantity": 10
+  },
+  {
+    "brand": "MSI",
+    "name": "Raider GE78 HX 14V",
+    "price": "Rp. 64.499.000",
+    "image": "img/laptop/7.png",
+    "cpu": "CPU: Up to Intel® Core™ i9 processor HX series (14th Gen)",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4090 Laptop GPU 16GB GDDR6",
+    "memory": "Memory: Max 96GBUp to DDR5-5600 2 Slots *Vary by Memory capacity",
+    "storage": "Storage: 1x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible",
+    "display": "Display: 17” QHD+ (2560x1600), 240Hz, IPS-Level 17” FHD+ (1920x1200), 165Hz, IPS-Level",
+    "quantity": 10
+  },
+  {
+    "brand": "MSI",
+    "name": "Vector GP68 HX 12V",
+    "price": "Rp. 53.000.000",
+    "image": "img/laptop/8.png",
+    "cpu": "CPU: Up to 13th Gen Intel® Core™ i9 HX Processor",
+    "gpu": "GPU: NVIDIA® GeForce RTX™ 4080 Laptop GPU 12GB GDDR6",
+    "memory": "Memory: Max 64GB 2 Slots",
+    "storage": "Storage: 1x M.2 SSD slot (NVMe PCIe Gen4), 1x M.2 SSD slot (NVMe PCIe Gen5) Compatible",
+    "display": "Display: 16” QHD+ (2560x1600), 240Hz, IPS-Level 16\" 16:10 FHD+(1920 x 1200), 144Hz, IPS-level",
+    "quantity": 10
+  }
+]

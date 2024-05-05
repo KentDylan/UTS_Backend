@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Menggunakan tinggi viewport agar form berada di tengah layar */
+  }
+  
+  .form-box {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  

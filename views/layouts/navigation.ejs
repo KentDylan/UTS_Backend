@@ -1,0 +1,40 @@
+<section id="header">
+  <a href="#"><img class="logo" src="/img/msi-logo-black.png" alt="" /></a>
+
+  <div>
+    <ul id="navbar">
+      <li>
+        <a class="<%= activePage === 'home' ? 'active' : '' %>" href="/"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a class="<%= activePage === 'shop' ? 'active' : '' %>" href="/shop"
+          >Product</a
+        >
+      </li>
+      <li>
+        <a class="<%= activePage === 'cart' ? 'active' : '' %>" href="/cart"
+          >Cart</a
+        >
+      </li>
+      <li>
+        <a class="<%= activePage === 'order' ? 'active' : '' %>" href="/order"
+          >Order</a
+        >
+      </li>
+      <li>
+        <a
+          class="<%= activePage === 'profile' ? 'active' : '' %>"
+          href="/profile"
+        >
+          <i class="bi bi-person-circle fw-bold fs-4"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="mobile">
+    <a href="/cart"><i class="far fa-shopping-bag"></i></a>
+    <i id="bar" class="fas fa-outdent"></i>
+  </div>
+</section>

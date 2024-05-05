@@ -1,0 +1,78 @@
+<section id="prodetails" class="section-p1">
+  <div class="single-pro-image">
+    <img src="<%= product.image %>" width="100%" alt="" />
+  </div>
+  <div class="single-pro-details">
+    <h6 id="Brand">MSI</h6>
+    <form method="POST" action="/cart">
+      <h4 id="ProductName"><%= product.name %></h4>
+      <h2 id="ProductPrice">$ <%= product.price %></h2>
+      <p class="fw-bold">Stock: <%= product.quantity %></p>
+      <!-- Add this line -->
+      <input type="hidden" id="id" name="id" value="<%= product._id %>" />
+      <input
+        type="hidden"
+        id="productName"
+        name="productName"
+        value="<%= product.name %>"
+      />
+      <input
+        type="hidden"
+        id="image"
+        name="image"
+        value="<%= product.image %>"
+      />
+      <input
+        id="quantity"
+        name="quantity"
+        type="number"
+        min="1"
+        max="<%= product.quantity %>"
+        value="1"
+        required
+      />
+      <input
+        type="hidden"
+        id="totalPrice"
+        name="totalPrice"
+        value="<%= product.price %>"
+      />
+      <button id="addToCartBtn" type="submit" class="btn btn-primary">
+        Add To Cart
+      </button>
+      <h6>Specification</h6>
+      <span id="cpu">CPU: <%= product.cpu %></span>
+      <span id="gpu">GPU: <%= product.gpu %></span>
+      <span id="memory">Memory: <%= product.memory %></span>
+      <span id="storage">Storage: <%= product.storage %></span>
+      <span id="display">Display: <%= product.display %></span>
+    </form>
+  </div>
+</section>
+
+<section id="product1" class="section-p1">
+  <h2>Featured Items</h2>
+  <p>Latest Releases</p>
+  <div class="pro-container">
+    <% let count = 0; %> <% products.forEach(product => { %> <% if (count < 4 &&
+    product.name !== currentProductName) { %>
+    <div class="pro" onclick="window.location.href='/shop/<%= product._id %>'">
+      <img src="<%= product.image %>" alt="" />
+      <div class="des">
+        <h5><%= product.name %></h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4><%= product.price %></h4>
+      </div>
+      <a href="product-detail.html?product_id=<%= product._id %>"
+        ><i class="fal fa-shopping-cart cart"></i
+      ></a>
+    </div>
+    <% count++; %> <% } %> <% }) %>
+  </div>
+</section>

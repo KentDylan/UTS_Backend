@@ -1,0 +1,50 @@
+<section id="page-header">
+  <img src="img/banner/GF63_GL63_banner.jpg" alt="" />
+</section>
+
+<section id="search-bar" class="section-p1">
+  <input type="text" id="search-input" placeholder="Search products..." />
+  <select id="series-filter">
+    <option value="">Filter by series</option>
+    <option value="titan">Titan Series</option>
+    <option value="stealth">Stealth Series</option>
+    <option value="raider">Raider Series</option>
+    <option value="vector">Vector Series</option>
+    <option value="crosshair">Crosshair Series</option>
+    <option value="sword">Sword Series</option>
+    <option value="katana">Katana Series</option>
+  </select>
+  <select id="sort-by">
+    <option value="">Sort by</option>
+    <option value="asc">Price: Low to High</option>
+    <option value="desc">Price: High to Low</option>
+  </select>
+</section>
+
+<section id="product1" class="section-p1">
+  <div class="pro-container">
+    <% products.forEach(product => { %>
+    <div class="pro" onclick="window.location.href='/shop/<%= product._id %>'">
+      <img src="<%= product.image %>" alt="" />
+      <div class="des">
+        <h5><%= product.name %></h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$ <%= product.price %></h4>
+      </div>
+      <a><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <% }) %>
+  </div>
+</section>
+
+<section id="pagination" class="section-p1">
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+</section>
